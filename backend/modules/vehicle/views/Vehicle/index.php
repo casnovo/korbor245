@@ -6,18 +6,18 @@ use yii\grid\ActionColumn;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 /* @var $this yii\web\View */
-/* @var $searchModel backend\modules\sarabun\models\EntryagencySearch */
+/* @var $searchModel backend\modules\vehicle\models\VehicleSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'จัดการหน่วยงาน';
+$this->title = 'Vehicles';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="entryagency-index">
+<div class="vehicle-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('เพิ่มหน่วยงาน', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Vehicle', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -27,15 +27,23 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-           // ['class' => 'yii\grid\SerialColumn'],
+            ['class' => 'yii\grid\SerialColumn'],
 
-            //'identryagency',
-            'name',
-            'codename',
+            'id',
+            'brand',
+            'model',
+            'enginenumber',
+            'bodynumber',
+            //'carregistration',
+            //'documents',
+            //'doc2',
+            //'doc3',
+            //'vstatus',
+            //'vpic',
             [
                 'class' => ActionColumn::className(),
-                'urlCreator' => function ($action,  $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'identryagency' => $model->identryagency]);
+                'urlCreator' => function ($action, vehicle $model, $key, $index, $column) {
+                    return Url::toRoute([$action, 'id' => $model->id]);
                  }
             ],
         ],

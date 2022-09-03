@@ -152,16 +152,16 @@ use yii\jui\DatePicker;
 
                         </div>
                         <div class="form-group">
-                            <?= $form->field($model, 'bloc_idbloc')->dropdownList([
+                            <?= $form->field($model, 'bloc_idbloc')->dropdownList(
                                 ArrayHelper::map(Bloc::find() -> all(),'idbloc','name')
-                            ],
+                            ,
                                /// ['prompt'=>'เลือกแฟ้ม']
                             ); ?>
                         </div>
                         <div class="form-group">
-                            <?= $form->field($model, 'entryagency_identryagency')->dropdownList([
+                            <?= $form->field($model, 'entryagency_identryagency')->dropdownList(
                                 ArrayHelper::map(Entryagency::find() -> all(),'identryagency','name')
-                            ],
+                            ,
                                /// ['prompt'=>'หน่วยงานผู้รับ']
                             ); ?>
                         </div>

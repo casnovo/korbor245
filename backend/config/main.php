@@ -18,6 +18,9 @@ return [
         'Sarabun' => [
             'class' => 'backend\modules\sarabun\Sarabun',
         ],
+        'vehicle' => [
+            'class' => 'backend\modules\vehicle\Vehicle',
+        ],
         'gridview' =>  [
             'class' => '\kartik\grid\Module'
             // enter optional module parameters below - only if you need to
@@ -28,6 +31,13 @@ return [
         ],
     ],
     'components' => [
+        'assetManager' => [
+            'bundles' => [
+                'kartik\form\ActiveFormAsset' => [
+                    'bsDependencyEnabled' => false // do not load bootstrap assets for a specific asset bundle
+                ],
+            ],
+        ],
         'view' => [
             'theme' => [
                 'pathMap' => [

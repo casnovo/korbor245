@@ -68,6 +68,7 @@ class SarabunoutController extends Controller
      */
     public function actionCreate()
     {
+
         $model = new sarabunout();
         $url = 'backend.test/uploads/';
         if ($this->request->isPost) {
@@ -87,8 +88,9 @@ class SarabunoutController extends Controller
                         $model->kind='น.';
                         break;
                 }
-                $temp = $model->kind.'0030.34(245)/'.$model->binid ;
-                $model->binid = $temp ;
+                $temps = $model->kind.'0030.34(245)/'.$model->binid ;
+                $model->binid = $temps ;
+
                 $model->save();
                 return $this->redirect(['view', 'idsarabun' => $model->idsarabun]);
             }

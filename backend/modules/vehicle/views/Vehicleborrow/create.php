@@ -3,13 +3,13 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model backend\modules\sarabun\models\Entryagency */
+/* @var $model backend\modules\vehicle\models\vehicleborrow */
 
-$this->title = 'เพิ่มหน่วยงาน';
-$this->params['breadcrumbs'][] = ['label' => 'Entryagencies', 'url' => ['index']];
+$this->title = 'Create Vehicleborrow';
+$this->params['breadcrumbs'][] = ['label' => 'Vehicleborrows', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="entryagency-create">
+<div class="vehicleborrow-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

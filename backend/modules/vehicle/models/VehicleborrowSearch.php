@@ -1,15 +1,15 @@
 <?php
 
-namespace backend\modules\sarabun\models;
+namespace backend\modules\vehicle\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\modules\sarabun\models\Entryagency;
+use backend\modules\vehicle\models\vehicleborrow;
 
 /**
- * EntryagencySearch represents the model behind the search form of `backend\modules\sarabun\models\Entryagency`.
+ * VehicleborrowSearch represents the model behind the search form of `backend\modules\vehicle\models\vehicleborrow`.
  */
-class EntryagencySearch extends Entryagency
+class VehicleborrowSearch extends vehicleborrow
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,8 @@ class EntryagencySearch extends Entryagency
     public function rules()
     {
         return [
-            [['identryagency'], 'integer'],
-            [['name', 'codename'], 'safe'],
+            [['id', 'vehicle_id'], 'integer'],
+            [['name', 'rank', 'mission', 'doc', 'doc2', 'dates'], 'safe'],
         ];
     }
 
@@ -40,7 +40,7 @@ class EntryagencySearch extends Entryagency
      */
     public function search($params)
     {
-        $query = Entryagency::find();
+        $query = vehicleborrow::find();
 
         // add conditions that should always apply here
 
@@ -58,11 +58,16 @@ class EntryagencySearch extends Entryagency
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'identryagency' => $this->identryagency,
+            'id' => $this->id,
+            'vehicle_id' => $this->vehicle_id,
+            'dates' => $this->dates,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'codename', $this->codename]);
+            ->andFilterWhere(['like', 'rank', $this->rank])
+            ->andFilterWhere(['like', 'mission', $this->mission])
+            ->andFilterWhere(['like', 'doc', $this->doc])
+            ->andFilterWhere(['like', 'doc2', $this->doc2]);
 
         return $dataProvider;
     }

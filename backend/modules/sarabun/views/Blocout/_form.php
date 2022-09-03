@@ -149,3 +149,5 @@ use yii\widgets\ActiveForm;
 
             </div>
         </div>
+    </div>
+</div>

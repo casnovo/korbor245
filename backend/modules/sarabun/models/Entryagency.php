@@ -9,6 +9,7 @@ use Yii;
  *
  * @property int $identryagency หมายเลขหน่วยงานหนังสือเข้า
  * @property string|null $name ชื่อหน่วยงาน
+ * @property string|null $codename
  *
  * @property Sarabunin[] $sarabunins
  * @property Sarabunout[] $sarabunouts
@@ -29,10 +30,7 @@ class Entryagency extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['identryagency'], 'required'],
-            [['identryagency'], 'integer'],
-            [['name'], 'string', 'max' => 45],
-            [['identryagency'], 'unique'],
+            [['name', 'codename'], 'string', 'max' => 45],
         ];
     }
 
@@ -44,6 +42,7 @@ class Entryagency extends \yii\db\ActiveRecord
         return [
             'identryagency' => 'หมายเลขหน่วยงานหนังสือเข้า',
             'name' => 'ชื่อหน่วยงาน',
+            'codename' => 'Codename',
         ];
     }
 

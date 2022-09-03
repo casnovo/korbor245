@@ -6,6 +6,7 @@ use yii\helpers\ArrayHelper;
 use backend\modules\sarabun\models\Entryagency;
 use backend\modules\sarabun\models\Bloc;
 use yii\jui\DatePicker;
+
 /* @var $this yii\web\View */
 /* @var $model backend\modules\sarabun\models\sarabunout */
 /* @var $form yii\widgets\ActiveForm */
@@ -151,6 +152,7 @@ use yii\jui\DatePicker;
 
                         </div>
                         <div class="form-group">
+
                             <?= $form->field($model, 'bloc_idbloc')->dropdownList(
                                 ArrayHelper::map(Bloc::find() -> all(),'idbloc','name')
                             ,

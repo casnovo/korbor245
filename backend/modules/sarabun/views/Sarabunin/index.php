@@ -9,7 +9,7 @@ use yii\widgets\Pjax;
 /* @var $searchModel backend\modules\sarabun\models\SarabuninSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Sarabunins';
+$this->title = 'บันทีกทะเบียนรับ';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="sarabunin-index">
@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Sarabunin', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('[บันทึกทะเบียนรับ]', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
@@ -27,14 +27,21 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+           // ['class' => 'yii\grid\SerialColumn'],
 
-            'idsarabun',
+           // 'idsarabun',
             'binid',
             'bdate',
             'details',
             'note',
-            //'data',
+            [
+                'attribute' => 'data',
+                'label' => 'เอกสาร',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    return Html::a($model->data,'http://'.$model->data); // your url here
+                },
+            ],
             //'bloc_idbloc',
             //'entryagency_identryagency',
             [

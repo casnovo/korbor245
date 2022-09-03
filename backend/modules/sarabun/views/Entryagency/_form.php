@@ -7,7 +7,6 @@ use yii\widgets\ActiveForm;
 /* @var $model backend\modules\sarabun\models\Entryagency */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
 <style>
     .register{
         background: -webkit-linear-gradient(left, #3931af, #00c6ff);
@@ -118,24 +117,17 @@ use yii\widgets\ActiveForm;
 
                 <?php $form = ActiveForm::begin(); ?>
 
-                <h3 class="register-heading">บันทึกหน่วยงานเกี่ยวข้อง</h3>
+                <h3 class="register-heading">บันทึกแฟ้มงาน</h3>
                 <div class="row register-form">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="form-group">
-                            <?= $form->field($model, 'identryagency')->textInput() ?>
+                            <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+                            <?= $form->field($model, 'codename')->textInput(['maxlength' => true]) ?>
                         </div>
 
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-                        </div>
-
-
-                        <div class="form-group">
+                    <div class="form-group">
                             <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
-                        </div>
-
                         <?php ActiveForm::end(); ?>
                     </div>
                 </div>
@@ -144,3 +136,6 @@ use yii\widgets\ActiveForm;
 
             </div>
         </div>
+    </div>
+</div>
+

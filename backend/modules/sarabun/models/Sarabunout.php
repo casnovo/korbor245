@@ -30,7 +30,7 @@ class Sarabunout extends \yii\db\ActiveRecord
     }
     public $file;
     public $kind;
-
+    public $temp;
     /**
      * {@inheritdoc}
      */
@@ -39,9 +39,10 @@ class Sarabunout extends \yii\db\ActiveRecord
         return [
             [['bdate', 'details', 'bloc_idbloc', 'entryagency_identryagency','kind'], 'required'],
             [['bdate'], 'safe'],
-            [['bloc_idbloc', 'entryagency_identryagency'], 'integer'],
+            [['entryagency_identryagency'], 'integer'],
             [['binid'], 'string', 'max' => 45],
             [['file'],'file'],
+            [['temp'], 'integer', 'max' => 5,],
             [['kind'], 'string', 'max' => 3,],
             [['details', 'note', 'data'], 'string', 'max' => 100],
             [['bloc_idbloc'], 'exist', 'skipOnError' => true, 'targetClass' => Bloc::className(), 'targetAttribute' => ['bloc_idbloc' => 'idbloc']],
