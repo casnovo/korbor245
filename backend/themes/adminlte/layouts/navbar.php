@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 
+
 ?>
 <!-- Navbar -->
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -22,6 +23,15 @@ use yii\helpers\Html;
                 <li class="dropdown-divider"></li>
                 <li><?= Html::a('จัดการหน่วยงาน', ['Sarabun/entryagency'], ['class' => 'dropdown-item']) ?></li>
                 <li class="dropdown-divider"></li>
+                <li><?= Html::a('Sign out', ['site/logout'], ['data-method' => 'post', 'class' => 'dropdown-item']) ?></li>
+            </ul>
+        </li>
+        </li>
+        <li class="nav-item dropdown">
+            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">ข้อมูลยานพาหะนะ</a>
+            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+                <li><?= Html::a('จัดการยานพาหะนะ', ['vehicle/vehicle'], ['class' => 'dropdown-item']) ?></li>
+                <li><?= Html::a('จัดการเอกสาร', ['vehicle/vdoc'], ['class' => 'dropdown-item']) ?></li>
                 <li><?= Html::a('Sign out', ['site/logout'], ['data-method' => 'post', 'class' => 'dropdown-item']) ?></li>
             </ul>
         </li>

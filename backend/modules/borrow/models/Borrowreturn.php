@@ -47,7 +47,7 @@ class Borrowreturn extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['force_idforce', 'wh21_idwh21', 'status', 'borrowdate'], 'required'],
+            [['force_idforce', 'status', 'borrowdate'], 'required'],
             [['wh21_idwh21', 'status'], 'integer'],
             [['borrowdate', 'returndate'], 'safe'],
             [['f1','f2'],'file'],

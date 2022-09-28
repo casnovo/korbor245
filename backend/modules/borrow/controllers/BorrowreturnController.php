@@ -100,7 +100,7 @@ class BorrowreturnController extends Controller
                     $items = Yii::$app->request->post();
 
                     //var_dump($items['Borrowreturn']['items']);
-                    $i = 0;
+
                     foreach($items['Borrowreturn']['items'] as $key => $val){ //นำรายการสินค้าที่เลือกมา loop บันทึก
                         if(empty($val['$idbr'])){
                             $order_detail = new Borrow24();
@@ -128,10 +128,24 @@ class BorrowreturnController extends Controller
                 $temp = Wh21::findOne([
                     'idwh21' => $model->wh21_idwh21,
                 ]);
+
                 $model->wh21_idwh21 = $temp->kind;
                 $sn = $temp->sn ;
                 Settings::setTempDir(Yii::getAlias('@webroot').'/temp/'); //กำหนด folder temp สำหรับ windows server ที่ permission denied temp (อย่ายลืมสร้างใน project ล่ะ)
                 $templateProcessor = new TemplateProcessor(Yii::getAlias('@webroot').'/msword/borroggun.docx');//เลือกไฟล์ template ที่เราสร้างไว้
+                $i = 0;
+                foreach($items['Borrowreturn']['items'] as $key => $val){ //นำรายการสินค้าที่เลือกมา loop บันทึก
+                    if(empty($val['$idbr'])){
+                        $temp = Wh24::findOne([
+                            'idwh24' => $val['idwh24'],
+                        ]);
+                        $i++;
+                        $name = $temp->name;
+                        $countunit = $temp->countunit;
+                        $templateProcessor->setValue('doc_ fitting'.$i, $i.'. '.$name.'   '.$val['quantity'].'   '.$countunit);
+                    }
+
+                }
                 ///$templateProcessor->setValue('doc_department', 'สำนักเทคโนโลยีสารสนเทศ');//อัดตัวแปร รายตัว
                 $templateProcessor->setValue(
                     [
@@ -141,10 +155,6 @@ class BorrowreturnController extends Controller
                         'doc_kind',
                         'doc_sn',
                         'doc_mi',
-                        'doc_ fitting1',
-                        'doc_ fitting2',
-                        'doc_ fitting3',
-                        'doc_ fitting4',
                     ],
                     [
                         $model->force_idforce,

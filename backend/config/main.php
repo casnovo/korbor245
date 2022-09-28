@@ -7,6 +7,7 @@ $params = array_merge(
 );
 
 return [
+    'language'=>'th_TH', // เปิดใช้งานภาษาไทย
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
@@ -21,6 +22,12 @@ return [
         'vehicle' => [
             'class' => 'backend\modules\vehicle\Vehicle',
         ],
+        'land' => [
+            'class' => 'backend\modules\land\land',
+        ],
+        'test' => [
+            'class' => 'backend\modules\test\test',
+        ],
         'gridview' =>  [
             'class' => '\kartik\grid\Module'
             // enter optional module parameters below - only if you need to
@@ -31,12 +38,24 @@ return [
         ],
     ],
     'components' => [
+        'thaiFormatter'=>[
+            'class'=>'dixonsatit\thaiYearFormatter\ThaiYearFormatter',
+        ],
         'assetManager' => [
+
             'bundles' => [
                 'kartik\form\ActiveFormAsset' => [
                     'bsDependencyEnabled' => false // do not load bootstrap assets for a specific asset bundle
                 ],
+                'dosamigos\google\maps\MapAsset' => [
+                    'options' => [
+                        'key' => 'AIzaSyBVyU80bJC1fJgVOc9L6Ssb6nXn51Pi8UY',
+                        'language' => 'id',
+                        'version' => '3.1.18'
+                    ]
+                ],
             ],
+
         ],
         'view' => [
             'theme' => [

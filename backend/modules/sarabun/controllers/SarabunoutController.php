@@ -74,8 +74,7 @@ class SarabunoutController extends Controller
         if ($this->request->isPost) {
             if ($model->load($this->request->post())) {
                 ///เก็บชื่อและข้อมูลไฟล์เซพลงโฟลเดอร์อัพโหลด
-                $thaiyear = substr((string)((int)date("Y")+543),2);;
-                $imageName = $model->details.$thaiyear;
+                $imageName = md5($model->details.time()) ;
                 $model->file = UploadedFile::getInstance($model,'file');
                 $model->file->saveAs('uploads/'.$imageName.'.'.$model->file->extension);
                 ///เก็บที่อยู่ลงฐานข้อมููล

@@ -28,11 +28,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'doc') ?>
 
-    <?php // echo $form->field($model, 'doc2') ?>
-
     <?php // echo $form->field($model, 'vehicle_id') ?>
 
-    <?php // echo $form->field($model, 'dates') ?>
+    <?php // echo $form->field($model, 'cdate') ?>
+
+    <?php // echo $form->field($model, 'udate') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

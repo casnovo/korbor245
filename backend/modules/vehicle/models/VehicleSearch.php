@@ -18,7 +18,7 @@ class VehicleSearch extends vehicle
     {
         return [
             [['id'], 'integer'],
-            [['brand', 'model', 'enginenumber', 'bodynumber', 'carregistration', 'documents', 'doc2', 'doc3', 'vstatus', 'vpic'], 'safe'],
+            [['brand', 'model', 'enginenumber', 'bodynumber', 'carregistration', 'status', 'kind', 'detill','status2'], 'safe'],
         ];
     }
 
@@ -66,11 +66,10 @@ class VehicleSearch extends vehicle
             ->andFilterWhere(['like', 'enginenumber', $this->enginenumber])
             ->andFilterWhere(['like', 'bodynumber', $this->bodynumber])
             ->andFilterWhere(['like', 'carregistration', $this->carregistration])
-            ->andFilterWhere(['like', 'documents', $this->documents])
-            ->andFilterWhere(['like', 'doc2', $this->doc2])
-            ->andFilterWhere(['like', 'doc3', $this->doc3])
-            ->andFilterWhere(['like', 'vstatus', $this->vstatus])
-            ->andFilterWhere(['like', 'vpic', $this->vpic]);
+            ->andFilterWhere(['like', 'status', $this->status])
+            ->andFilterWhere(['like', 'kind', $this->kind])
+            ->andFilterWhere(['like', 'status2', $this->status2])
+            ->andFilterWhere(['like', 'detill', $this->detill]);
 
         return $dataProvider;
     }

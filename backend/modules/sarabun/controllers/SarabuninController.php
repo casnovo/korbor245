@@ -3,7 +3,7 @@
 namespace backend\modules\sarabun\controllers;
 
 
-use backend\modules\sarabun\models\EntryagencySearch;
+use backend\modules\sarabun\models\Entryagency;
 use backend\modules\sarabun\models\sarabunin;
 use backend\modules\sarabun\models\SarabuninSearch;
 use yii\web\Controller;
@@ -75,8 +75,8 @@ class SarabuninController extends Controller
         if ($this->request->isPost) {
             if ($model->load($this->request->post())) {
                 ///เก็บชื่อและข้อมูลไฟล์เซพลงโฟลเดอร์อัพโหลด
-                $thaiyear = substr((string)((int)date("Y")+543),2);;
-                $imageName = $model->details.$thaiyear;
+               // $thaiyear = substr((string)((int)date("Y")+543),2);;
+                $imageName = md5($model->details.time()) ;
                 $model->file = UploadedFile::getInstance($model,'file');
                 $model->file->saveAs('uploads/'.$imageName.'.'.$model->file->extension);
                 ///เก็บที่อยู่ลงฐานข้อมููล
@@ -89,6 +89,7 @@ class SarabuninController extends Controller
                         $model->kind='น.';
                         break;
                 }
+
                 $model->binid=$model->kind.$model->binid;
 
                 $model->save();
@@ -152,4 +153,5 @@ class SarabuninController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
 }

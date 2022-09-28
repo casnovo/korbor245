@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="bloc-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+
 
 
 

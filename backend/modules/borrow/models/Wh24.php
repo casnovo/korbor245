@@ -35,6 +35,7 @@ class Wh24 extends \yii\db\ActiveRecord
             [['idwh24', 'code', 'name', 'sum', 'img'], 'required'],
             [['idwh24', 'sum'], 'integer'],
             [['code', 'name', 'img'], 'string', 'max' => 45],
+            [['countunit'], 'string', 'max' => 10],
             [['idwh24'], 'unique'],
         ];
     }
@@ -50,6 +51,7 @@ class Wh24 extends \yii\db\ActiveRecord
             'name' => 'Name',
             'sum' => 'Sum',
             'img' => 'Img',
+            'countunit' => 'หน่วยนับ',
         ];
     }
 

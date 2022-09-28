@@ -22,11 +22,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'doc')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'doc2')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'vehicle_id')->textInput() ?>
 
-    <?= $form->field($model, 'dates')->textInput() ?>
+    <?= $form->field($model, 'cdate')->textInput() ?>
+
+    <?= $form->field($model, 'udate')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

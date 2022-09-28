@@ -34,9 +34,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'rank',
             'mission',
             'doc',
-            'doc2',
             'vehicle_id',
-            'dates',
+            'cdate',
+            'udate',
         ],
     ]) ?>
 

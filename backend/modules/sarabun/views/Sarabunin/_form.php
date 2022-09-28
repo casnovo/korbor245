@@ -111,7 +111,7 @@ use yii\jui\DatePicker;
     <div class="container register">
         <div class="row">
             <div class="col-md-3 register-left">
-                <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                <img src="" alt=""/>
                 <h3>ยินดีต้อนรับ</h3>
                 <p>ระบบทะบียนรับ-ส่ง งานส่งกำลังบำรุง ร้อย ตชด.245 </p>
 
@@ -182,3 +182,5 @@ use yii\jui\DatePicker;
 
             </div>
         </div>
+    </div>
+</div>

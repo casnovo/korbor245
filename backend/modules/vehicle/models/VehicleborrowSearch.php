@@ -18,7 +18,7 @@ class VehicleborrowSearch extends vehicleborrow
     {
         return [
             [['id', 'vehicle_id'], 'integer'],
-            [['name', 'rank', 'mission', 'doc', 'doc2', 'dates'], 'safe'],
+            [['name', 'rank', 'mission', 'doc', 'cdate', 'udate'], 'safe'],
         ];
     }
 
@@ -60,14 +60,14 @@ class VehicleborrowSearch extends vehicleborrow
         $query->andFilterWhere([
             'id' => $this->id,
             'vehicle_id' => $this->vehicle_id,
-            'dates' => $this->dates,
+            'cdate' => $this->cdate,
+            'udate' => $this->udate,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'rank', $this->rank])
             ->andFilterWhere(['like', 'mission', $this->mission])
-            ->andFilterWhere(['like', 'doc', $this->doc])
-            ->andFilterWhere(['like', 'doc2', $this->doc2]);
+            ->andFilterWhere(['like', 'doc', $this->doc]);
 
         return $dataProvider;
     }

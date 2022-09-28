@@ -34,12 +34,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'rank',
             'mission',
             'doc',
-            //'doc2',
             //'vehicle_id',
-            //'dates',
+            //'cdate',
+            //'udate',
             [
                 'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, vehicleborrow $model, $key, $index, $column) {
+                'urlCreator' => function ($action,$model, $key, $index, $column) {
                     return Url::toRoute([$action, 'id' => $model->id]);
                  }
             ],

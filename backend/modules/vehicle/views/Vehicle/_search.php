@@ -30,15 +30,11 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'carregistration') ?>
 
-    <?php // echo $form->field($model, 'documents') ?>
+    <?php // echo $form->field($model, 'status') ?>
 
-    <?php // echo $form->field($model, 'doc2') ?>
+    <?php // echo $form->field($model, 'kind') ?>
 
-    <?php // echo $form->field($model, 'doc3') ?>
-
-    <?php // echo $form->field($model, 'vstatus') ?>
-
-    <?php // echo $form->field($model, 'vpic') ?>
+    <?php // echo $form->field($model, 'detill') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

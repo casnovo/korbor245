@@ -5,14 +5,12 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\modules\vehicle\models\vehicle */
 
-$this->title = 'Update Vehicle: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Vehicles', 'url' => ['index']];
+$this->title = 'แก้ใขยาพาหะนะ: ' .$model->carregistration;
+$this->params['breadcrumbs'][] = ['label' => 'ยานพาหะนะ', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="vehicle-update">
-
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
         'model' => $model,
