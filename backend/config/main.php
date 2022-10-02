@@ -49,7 +49,7 @@ return [
                 ],
                 'dosamigos\google\maps\MapAsset' => [
                     'options' => [
-                        'key' => 'AIzaSyBVyU80bJC1fJgVOc9L6Ssb6nXn51Pi8UY',
+                        'key' => '//////',
                         'language' => 'id',
                         'version' => '3.1.18'
                     ]
